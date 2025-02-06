@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Page</title>
+    <style>
+        /* Body styles */
+        body {
+            margin: 0;
+            overflow: hidden;
+            background-color: #f4f4f4;
+            font-family: Arial, sans-serif;
+        }
+
+        /* Common styles for text */
+        .message {
+            font-size: 50px;
+            position: absolute;
+            opacity: 1;
+            transition: all 2s ease;
+        }
+
+        /* Specific positions for Hello Maya and Modda Gudu Maya */
+        #hello {
+            top: 30%;
+            left: 20%;
+        }
+
+        #modda {
+            top: 50%;
+            left: 20%;
+            opacity: 0;  /* Initially hidden */
+        }
+
+        #thankYou {
+            font-size: 40px;
+            position: absolute;
+            bottom: 10%;
+            left: 50%;
+            transform: translateX(-50%);
+            opacity: 0;  /* Initially hidden */
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Messages -->
+    <div id="hello" class="message">Hello Maya</div>
+    <div id="modda" class="message">Modda Gudu Maya</div>
+    <div id="thankYou" class="message">Thank you for watching!</div>
+
+    <script>
+        window.onload = function() {
+            // Step 1: Move "Hello Maya" to the side after 2 seconds
+            setTimeout(() => {
+                document.getElementById('hello').style.left = '90%';
+                document.getElementById('hello').style.opacity = 0; // Make it disappear
+            }, 2000);
+
+            // Step 2: Show "Modda Gudu Maya" after 4 seconds
+            setTimeout(() => {
+                document.getElementById('modda').style.opacity = 1;  // Make it appear
+            }, 4000);
+
+            // Step 3: Move "Modda Gudu Maya" to the side after 6 seconds
+            setTimeout(() => {
+                document.getElementById('modda').style.left = '90%';
+                document.getElementById('modda').style.opacity = 0; // Make it disappear
+            }, 6000);
+
+            // Step 4: Show "Thank you for watching!" after 8 seconds
+            setTimeout(() => {
+                document.getElementById('thankYou').style.opacity = 1; // Make it appear
+            }, 8000);
+        }
+    </script>
+
+</body>
+</html>
